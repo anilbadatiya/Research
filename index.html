@@ -23,10 +23,7 @@
             messagingSenderId: "306496296920"
         };
         firebase.initializeApp(config);
-        var database = firebase.database().ref().child("-L_kqUmVZCbRg-vhrQC3");
-        database.on('value', function (snapshot) {
-            console.log(snapshot.val())
-        });
+      
         var messaging = firebase.messaging();
         messaging.requestPermission().then(function () {
             console.log('Notification permission granted.');
@@ -58,6 +55,10 @@
                 //setTokenSentToServer(false);
             });
         };
+          var database = firebase.database().ref().child("-L_kqUmVZCbRg-vhrQC3");
+        database.on('value', function (snapshot) {
+            console.log(snapshot.val())
+        });
     </script>
 </body>
 </html>
